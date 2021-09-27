@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".character"/>
-        <activity android:name=".sub_main"/>
+        <activity android:name=".Character"/>
+        <activity android:name=".SubMain"/>
     </application>
 
 </manifest>

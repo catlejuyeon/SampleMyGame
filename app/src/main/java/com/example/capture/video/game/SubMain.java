@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class sub_main extends AppCompatActivity {
+public class SubMain extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class sub_main extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), character.class);
+                Intent intent = new Intent(getApplicationContext(), Character.class);
                 startActivity(intent);
             }
         });
