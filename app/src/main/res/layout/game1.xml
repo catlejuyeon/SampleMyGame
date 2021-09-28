@@ -3,29 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@drawable/game_background">
 
     <Button
         android:id="@+id/Hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="설명"
+        android:background="@drawable/game_hint"
         android:fontFamily="@font/im_hyemin_bold"
-        android:textSize="20sp"
-        app:layout_editor_absoluteX="22dp"
-        app:layout_editor_absoluteY="29dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-15dp" />
 
     <Button
         android:id="@+id/Stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="멈춤"
+        android:background="@drawable/game_stop"
         android:fontFamily="@font/im_hyemin_bold"
-        android:textSize="20sp"
-        app:layout_editor_absoluteX="303dp"
-        app:layout_editor_absoluteY="29dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="-14dp" />
 
     <TextView
         android:id="@+id/TextView"
@@ -35,11 +33,9 @@
         android:text="60"
         android:textColor="#0001ff"
         android:textSize="50sp"
-        app:layout_editor_absoluteX="125dp"
-        app:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="172dp"
-        tools:layout_editor_absoluteY="16dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="3dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
