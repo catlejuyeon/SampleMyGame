@@ -9,12 +9,14 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/SampleMyGame/app/src/main/res/drawable/game3_btn.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SampleMyGame/app/src/main/res/drawable/gameover_gomain.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SampleMyGame/app/src/main/res/drawable/gameover_replay.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/SampleMyGame/app/src/main/res/drawable/gogame.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SampleMyGame/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SampleMyGame/app/src/main/res/layout/character.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/SampleMyGame/app/src/main/res/layout/character.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SampleMyGame/app/src/main/res/layout/game1.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SampleMyGame/app/src/main/res/layout/game2.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SampleMyGame/app/src/main/res/layout/gameover.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SampleMyGame/app/src/main/res/layout/join.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/SampleMyGame/app/src/main/res/layout/sub_main.xml" value="0.2046875" />
       </map>
     </option>
   </component>
