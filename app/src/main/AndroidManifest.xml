@@ -17,9 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Character"/>
-        <activity android:name=".SubMain"/>
         <activity android:name=".Game1"/>
         <activity android:name=".Join"/>
+        <activity android:name=".Game2"/>
+        <activity android:name=".Game1Success"/>
     </application>
 
 </manifest>

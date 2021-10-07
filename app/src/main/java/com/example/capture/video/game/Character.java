@@ -15,7 +15,14 @@ public class Character extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.character);
 
-
+        Button go_game=findViewById(R.id.go_game);
+        go_game.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

@@ -8,12 +8,12 @@
     android:background="@drawable/gameoverback">
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/gameover_replay"
         android:fontFamily="@font/im_hyemin_bold"
-        android:text="    다시하기!    "
+        android:text="    다시하기    "
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,20 +22,20 @@
         app:layout_constraintVertical_bias="0.625" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:layout_marginBottom="96dp"
         android:background="@drawable/gameover_gomain"
         android:fontFamily="@font/im_hyemin_bold"
-        android:text="  메인화면으로!  "
+        android:text="     메인화면     "
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:layout_constraintTop_toBottomOf="@+id/again"
         app:layout_constraintVertical_bias="0.062" />
 
     <ImageView
