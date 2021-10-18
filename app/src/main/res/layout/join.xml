@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/id"
+        android:id="@+id/join_email"
         android:layout_width="160dp"
         android:layout_height="35dp"
         android:layout_marginStart="8dp"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/join_name"
         android:layout_width="160dp"
         android:layout_height="35dp"
         android:layout_marginTop="16dp"
@@ -36,12 +36,12 @@
         android:fontFamily="@font/im_hyemin_bold"
         android:inputType="textPassword"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/id"
-        app:layout_constraintStart_toStartOf="@+id/id"
-        app:layout_constraintTop_toBottomOf="@+id/id" />
+        app:layout_constraintEnd_toEndOf="@+id/join_email"
+        app:layout_constraintStart_toStartOf="@+id/join_email"
+        app:layout_constraintTop_toBottomOf="@+id/join_email" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/join_password"
         android:layout_width="160dp"
         android:layout_height="35dp"
         android:layout_marginTop="16dp"
@@ -49,13 +49,13 @@
         android:ems="10"
         android:fontFamily="@font/im_hyemin_bold"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="@+id/join_name"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/password"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintStart_toStartOf="@+id/join_name"
+        app:layout_constraintTop_toBottomOf="@+id/join_name" />
 
     <EditText
-        android:id="@+id/nickname"
+        android:id="@+id/join_pwck"
         android:layout_width="160dp"
         android:layout_height="35dp"
         android:layout_marginTop="16dp"
@@ -65,14 +65,14 @@
         android:inputType="textPersonName"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/email"
+        app:layout_constraintEnd_toEndOf="@+id/join_password"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:layout_constraintStart_toStartOf="@+id/join_password"
+        app:layout_constraintTop_toBottomOf="@+id/join_password"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/check_button"
         android:layout_width="50dp"
         android:layout_height="30dp"
         android:layout_marginTop="322dp"
@@ -82,11 +82,11 @@
         android:textSize="21sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.243"
-        app:layout_constraintStart_toEndOf="@+id/id"
+        app:layout_constraintStart_toEndOf="@+id/join_email"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/join"
+        android:id="@+id/join_button"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:background="@drawable/main_btn"
@@ -121,7 +121,7 @@
         android:text="아이디"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/id"
+        app:layout_constraintEnd_toStartOf="@+id/join_email"
         app:layout_constraintHorizontal_bias="0.917"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -135,7 +135,7 @@
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/password"
+        app:layout_constraintEnd_toStartOf="@+id/join_name"
         app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -150,7 +150,7 @@
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/password"
+        app:layout_constraintEnd_toStartOf="@+id/join_name"
         app:layout_constraintHorizontal_bias="0.917"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
@@ -165,7 +165,7 @@
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/password"
+        app:layout_constraintEnd_toStartOf="@+id/join_name"
         app:layout_constraintHorizontal_bias="0.917"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
