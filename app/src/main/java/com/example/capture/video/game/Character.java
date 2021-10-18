@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,10 @@ public class Character extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.character);
+
+        TextView level=findViewById(R.id.level);
+
+        level.setText("Lv"+"30");
 
         Button go_game=findViewById(R.id.go_game);
         go_game.setOnClickListener(new View.OnClickListener() {
