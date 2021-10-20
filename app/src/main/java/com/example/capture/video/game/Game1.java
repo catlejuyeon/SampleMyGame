@@ -71,7 +71,7 @@ public class Game1 extends AppCompatActivity {
     {
         if(timerTask != null)
         {
-            TextView.setText("60 초");
+            TextView.setText("30 초");
             timerTask.cancel();
             timerTask = null;
         }
