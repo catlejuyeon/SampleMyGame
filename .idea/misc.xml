@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Hyun/AndroidStudioProjects/SampleMyGame/app/src/main/res/layout/game1.xml" value="0.11548913043478261" />
+        <entry key="..\:/Users/Hyun/AndroidStudioProjects/SampleMyGame/app/src/main/res/layout/game2.xml" value="0.11548913043478261" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SampleMyGame/app/src/main/res/drawable/char_restore.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SampleMyGame/app/src/main/res/drawable/char_save.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SampleMyGame/app/src/main/res/drawable/game2_btn.xml" value="0.38229166666666664" />
