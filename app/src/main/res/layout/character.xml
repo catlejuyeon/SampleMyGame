@@ -123,9 +123,31 @@
         android:layout_marginTop="92dp"
         android:src="@drawable/character_basic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/user_clothes"
+        android:layout_width="260dp"
+        android:layout_height="372dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/clothes5" />
+
+    <ImageView
+        android:id="@+id/user_hat"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hat5" />
 
     <ImageView
         android:id="@+id/clothes5"
@@ -335,5 +357,6 @@
         app:layout_constraintStart_toEndOf="@+id/level"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/empty_exp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,6 @@
 package com.example.capture.video.game;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,16 +11,20 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Character extends AppCompatActivity {
-    int per=0;  //여기에다가 서버에서 받는 경험치 넣어야함. onCreate에다가 넣어야할지 아니면 다른데다가 넣어야할진 모르겠음
+    boolean i=true;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.character);
-
+        int level1=15;
+        int per=150;
 
         TextView level=findViewById(R.id.level);
         ImageView user_character=findViewById(R.id.user_character);
+        ImageView user_clothes=findViewById(R.id.user_clothes);
+        ImageView user_hat=findViewById(R.id.user_hat);
         ImageView exp_bar=findViewById(R.id.exp_bar);
+
         ImageView emoji5=findViewById(R.id.emoji5);
         ImageView emoji10=findViewById(R.id.emoji10);
         ImageView emoji15=findViewById(R.id.emoji15);
@@ -29,10 +32,22 @@ public class Character extends AppCompatActivity {
         ImageView emoji25=findViewById(R.id.emoji25);
         ImageView emoji30=findViewById(R.id.emoji30);
 
+        ImageView hat5=findViewById(R.id.hat5);
+        ImageView hat10=findViewById(R.id.hat10);
+        ImageView hat15=findViewById(R.id.hat15);
+        ImageView hat20=findViewById(R.id.hat20);
+        ImageView hat25=findViewById(R.id.hat25);
+        ImageView hat30=findViewById(R.id.hat30);
+
+        ImageView clothes5=findViewById(R.id.clothes5);
+        ImageView clothes10=findViewById(R.id.clothes10);
+        ImageView clothes15=findViewById(R.id.clothes15);
+        ImageView clothes20=findViewById(R.id.clothes20);
+        ImageView clothes25=findViewById(R.id.clothes25);
+        ImageView clothes30=findViewById(R.id.clothes30);
 
         level.setText("Lv"+"30");
         //30에는 서버에서 받은걸 넣기.
-
 
         Button go_game=findViewById(R.id.go_game);
         go_game.setOnClickListener(new View.OnClickListener() {
@@ -62,77 +77,265 @@ public class Character extends AppCompatActivity {
 
 
         //level==5했을 때 level이 빨간밑줄(int가 아니여서그런듯)
-        //한번만 실행하고 끝인가?(이 화면 켜질때 한번만 실행하면 되니까 반복안해도됨)
-        //swith case문으로 했을 때 만약 20이라면 5~15까지레벨이 풀려야하는데 20이면 20만 풀리면 어떡하지? if문을 써야하나?(일단대충해결)
-        if(level==5||level==10||level==15||level==20||level==25||level==30) {
-            userItem(level);
+        if(level1==5||level1==10||level1==15||level1==20||level1==25||level1==30) {
+            userItem(level1);
         }
 
         //서버에서 경험치 받아와서 경험치 바 표시
-        //expBar 함수 호출해서 맞는 이미지로 바꾸기 이게맞나?
-        exp_bar.setImageResource(expBar());
+        //식이 잘못됨. 100을채워야 레벨업이 된다면 90일떄 0.49를하면 44가 나옴.
+        //int exp_per=per/5; 해서 5보다 크거나 같고 100보다 작을 때 조건줘도 되긴함.
+        int exp_per = (int) (per * 0.49);
+        if(exp_per > 49 && exp_per<100) {
+            exp_bar.setImageResource(R.drawable.half_exp);
+        }else
+            exp_bar.setImageResource(R.drawable.empty_exp);
 
+
+
+//여기서부터 표정
         emoji5.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if(level==5){
+            public void onClick(View v) {
+                if(i==true){
                     user_character.setImageResource(R.drawable.emoji5);
+                    i=false;
+                }else{
+                    user_character.setImageResource(R.drawable.character_basic);
+                    i=true;
                 }
             }
         });
 
         emoji10.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if(level==10){
+            public void onClick(View v) {
+                if(i==true){
                     user_character.setImageResource(R.drawable.emoji10);
+                    i=false;
+                }else{
+                    user_character.setImageResource(R.drawable.character_basic);
+                    i=true;
                 }
             }
         });
 
         emoji15.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if(level==15){
+            public void onClick(View v) {
+                if(i==true){
                     user_character.setImageResource(R.drawable.emoji15);
+                    i=false;
+                }else{
+                    user_character.setImageResource(R.drawable.character_basic);
+                    i=true;
                 }
             }
         });
 
         emoji20.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if(level==20){
+            public void onClick(View v) {
+                if(i==true){
                     user_character.setImageResource(R.drawable.emoji20);
+                    i=false;
+                }else{
+                    user_character.setImageResource(R.drawable.character_basic);
+                    i=true;
                 }
             }
         });
 
         emoji25.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if(level==25){
+            public void onClick(View v) {
+                if(i==true){
                     user_character.setImageResource(R.drawable.emoji25);
+                    i=false;
+                }else{
+                    user_character.setImageResource(R.drawable.character_basic);
+                    i=true;
                 }
             }
         });
 
         emoji30.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if(level==30){
+            public void onClick(View v) {
+                if(i==true){
                     user_character.setImageResource(R.drawable.emoji30);
+                    i=false;
+                }else{
+                    user_character.setImageResource(R.drawable.character_basic);
+                    i=true;
                 }
             }
         });
 
 
+
+    // 여기서부터 옷
+        clothes5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(i==true){
+                    user_clothes.setImageResource(R.drawable.clothes5);
+                    i=false;
+                }else{
+                    user_clothes.setImageResource(R.drawable.empty_img);
+                    i=true;
+                }
+            }
+        });
+
+        clothes10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(i==true){
+                    user_clothes.setImageResource(R.drawable.clothes10);
+                    i=false;
+                }else{
+                    user_clothes.setImageResource(R.drawable.empty_img);
+                    i=true;
+                }
+            }
+        });
+
+        clothes15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(i==true){
+                    user_clothes.setImageResource(R.drawable.clothes15);
+                    i=false;
+                }else{
+                    user_clothes.setImageResource(R.drawable.empty_img);
+                    i=true;
+                }
+            }
+        });
+
+        clothes20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(i==true){
+                    user_clothes.setImageResource(R.drawable.clothes20);
+                    i=false;
+                }else{
+                    user_clothes.setImageResource(R.drawable.empty_img);
+                    i=true;
+                }
+            }
+        });
+
+        clothes25.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(i==true){
+                    user_clothes.setImageResource(R.drawable.clothes25);
+                    i=false;
+                }else{
+                    user_clothes.setImageResource(R.drawable.empty_img);
+                    i=true;
+                }
+            }
+        });
+
+        clothes30.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(i==true){
+                    user_clothes.setImageResource(R.drawable.clothes30);
+                    i=false;
+                }else{
+                    user_clothes.setImageResource(R.drawable.empty_img);
+                    i=true;
+                }
+            }
+        });
+
+    //여기서부터 모자
+        hat5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(i==true){
+                    user_hat.setImageResource(R.drawable.hat5);
+                    i=false;
+                }else{
+                    user_hat.setImageResource(R.drawable.empty_img);
+                    i=true;
+                }
+            }
+        });
+
+        hat10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(i==true){
+                    user_hat.setImageResource(R.drawable.hat10);
+                    i=false;
+                }else{
+                    user_hat.setImageResource(R.drawable.empty_img);
+                    i=true;
+                }
+            }
+        });
+
+        hat15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(i==true){
+                    user_hat.setImageResource(R.drawable.hat15);
+                    i=false;
+                }else{
+                    user_hat.setImageResource(R.drawable.empty_img);
+                    i=true;
+                }
+            }
+        });
+
+        hat20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(i==true){
+                    user_hat.setImageResource(R.drawable.hat20);
+                    i=false;
+                }else{
+                    user_hat.setImageResource(R.drawable.empty_img);
+                    i=true;
+                }
+            }
+        });
+
+        hat25.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(i==true){
+                    user_hat.setImageResource(R.drawable.hat25);
+                    i=false;
+                }else{
+                    user_hat.setImageResource(R.drawable.empty_img);
+                    i=true;
+                }
+            }
+        });
+
+        hat30.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(i==true){
+                    user_hat.setImageResource(R.drawable.hat30);
+                    i=false;
+                }else{
+                    user_hat.setImageResource(R.drawable.empty_img);
+                    i=true;
+                }
+            }
+        });
+
     }
 
-    //근데 여기 메소드 만들때 private int userItem(level)이 아니야? 근데 이렇게하면 또 이상하게 되긴함.
-    private void userItem(int level){
+
+    private void userItem(int level1){
         //level이 textview의 값이여야 하는데 그게 안들어감.
-        //userItem이 죽어있음. => onCreate에서 호출하면 되려나?(ㅇ)
         ImageView emoji5=findViewById(R.id.emoji5);
         ImageView emoji10=findViewById(R.id.emoji10);
         ImageView emoji15=findViewById(R.id.emoji15);
@@ -154,7 +357,7 @@ public class Character extends AppCompatActivity {
         ImageView clothes25=findViewById(R.id.clothes25);
         ImageView clothes30=findViewById(R.id.clothes30);
 
-            switch (level) {
+            switch (level1) {
                 case 5:
                     emoji5.setImageResource(R.drawable.unlock5_e);
                     clothes5.setImageResource(R.drawable.unlock5_c);
@@ -234,18 +437,17 @@ public class Character extends AppCompatActivity {
             }
         }
 
-    private int expBar(per) {
+    /*private void expBar(int per) { //내가 void를 int 로 써놨늗네 얘가 int를 void로 바꿔놓음 이유가 뭔지
         //만들어야할게 레벨업 할 때마다 경험치 다르게 설정
         //여기서 per는 서버에서 사용자 경험치, 임시로 맨위에 0으로 초기화함
         ImageView exp_bar = findViewById(R.id.exp_bar);   //이게맞아? xml에 있는 경험치바임
+        if(per==100){
+            exp_bar.setImageResource(R.drawable.empty_exp);
+        }
         int exp_per = (int) (per * 0.49);
         if (exp_per > 49 && exp_per<100) {
             exp_bar.setImageResource(R.drawable.half_exp);
         } else if(exp_per<=49 && exp_per==100)
             exp_bar.setImageResource(R.drawable.empty_exp);
-    }
-    //아이콘 눌렀을 때 캐릭터 변하기
-    private void characterSet(){
-        if ()
-    }
+    }*/
 }
