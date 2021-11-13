@@ -7,6 +7,31 @@
     android:orientation="vertical"
     android:background="@drawable/gameoverback">
 
+    <ImageView
+        android:id="@+id/exp_bar"
+        android:layout_width="110dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toEndOf="@+id/level"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/empty_exp" />
+
+    <TextView
+        android:id="@+id/level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/im_hyemin_bold"
+        android:text="Lv.1"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/again"
         android:layout_width="wrap_content"
