@@ -2,6 +2,7 @@ package com.example.capture.video.game;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class Game1 extends AppCompatActivity {
     Button btn_hint;
     Button btn_stop;
     TextView TextView;
+    MediaPlayer mediaPlayer;
     TimerTask timerTask;
     Timer timer = new Timer();
 
@@ -46,7 +48,12 @@ public class Game1 extends AppCompatActivity {
             }
         });
 
+        mediaPlayer = MediaPlayer.create(this, R.raw.mgame1);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
+
     }
+
 
     @Override
     protected void onDestroy()
