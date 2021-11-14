@@ -52,6 +52,15 @@ public class Game1 extends AppCompatActivity {
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
 
+        Button Button_add = findViewById(R.id.Button_add);
+        Button_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),SubActivity_add.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 
@@ -71,12 +80,10 @@ public class Game1 extends AppCompatActivity {
                 break;
             case R.id.Stop:
                 stopTimerTask();
-                break;
         }
     }
 
-    private void startTimerTask()
-    {
+    private void startTimerTask() {
         stopTimerTask();
 
         timerTask = new TimerTask()
@@ -105,6 +112,8 @@ public class Game1 extends AppCompatActivity {
             TextView.setText("30 초");
             timerTask.cancel();
             timerTask = null;
+            Intent intent = new Intent(getApplicationContext(),Game1Over.class);
+            startActivity(intent);
         }
     }
 
@@ -138,6 +147,8 @@ public class Game1 extends AppCompatActivity {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();
+                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(intent);
                 }
             });
             builder.show();
