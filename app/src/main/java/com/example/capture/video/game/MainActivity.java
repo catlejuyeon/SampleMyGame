@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         Glide.with(this).load(R.raw.main).into(main_img);
 
         Button imageButton = (Button) findViewById(R.id.game3_btn);
-        imageButton.setOnClickListener(new View.OnClickListener() {
 
+        imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Character.class);

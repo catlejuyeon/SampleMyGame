@@ -1,23 +1,33 @@
 package com.example.capture.video.game;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class Character extends AppCompatActivity {
     boolean i=true;
+    int check = 0;
+    int hat = 0;
+    int emoji = 0;
+    int clothes = 0;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.character);
-        int level1=15;
-        int per=150;
+        int level1=15; //서버에서받아야함 -레벨
+        int per=30; //서버에서받아야함 -경험치
 
         TextView level=findViewById(R.id.level);
         ImageView user_character=findViewById(R.id.user_character);
@@ -49,6 +59,76 @@ public class Character extends AppCompatActivity {
         level.setText("Lv"+"30");
         //30에는 서버에서 받은걸 넣기.
 
+        SharedPreferences pref;
+        SharedPreferences.Editor editor;
+
+        pref = getSharedPreferences("character", Activity.MODE_PRIVATE);
+        editor = pref.edit();
+
+
+        hat = pref.getInt("hat",0);
+        clothes = pref.getInt("clothes",0);
+        emoji = pref.getInt("emoji",0);
+
+        Log.d("clothes: ", String.valueOf(clothes));
+        Log.d("hat: ", String.valueOf(hat));
+        Log.d("emoji: ", String.valueOf(emoji));
+
+        ConstraintLayout.LayoutParams mLay= null;
+        Context context = getApplicationContext();
+
+        switch (clothes){
+            case 0:
+                user_clothes.setImageResource(R.drawable.empty_img);
+                break;
+            case 5:
+                Log.d("15","5");
+                user_clothes.setImageResource(R.drawable.clothes5);
+                mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
+
+
+                mLay.topMargin = ConvertDPtoPX(context,15);
+                mLay.rightMargin = ConvertDPtoPX(context,67);
+                mLay.width = ConvertDPtoPX(context,260);
+
+                user_clothes.setLayoutParams(mLay);
+                i=false;
+
+                clothes = 5;
+                break;
+            case 10:
+                Log.d("15","10");
+                user_clothes.setImageResource(R.drawable.clothes10);
+                mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
+
+                mLay.topMargin = ConvertDPtoPX(context,32);
+                mLay.rightMargin = ConvertDPtoPX(context,67);
+                mLay.width = ConvertDPtoPX(context,260);
+
+                user_clothes.setLayoutParams(mLay);
+                i=false;
+                clothes = 10;
+                break;
+            case 15:
+                Log.d("15","15");
+                user_clothes.setImageResource(R.drawable.clothes15);
+
+                mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
+
+                mLay.topMargin = ConvertDPtoPX(context,10);
+                mLay.rightMargin = ConvertDPtoPX(context,62);
+                mLay.width = ConvertDPtoPX(context,270);
+
+                user_clothes.setLayoutParams(mLay);
+
+                i=false;
+                clothes = 15;
+                break;
+            case 25:
+            case 30:
+        }
+
+
         Button go_game=findViewById(R.id.go_game);
         go_game.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +151,22 @@ public class Character extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //캐릭터를 꾸미고 꾸민 이미지를 메인 화면에다 넣는건가? 아니면 그냥 꾸미기창에 보이기? 쨌든 최종으로 꾸민 걸 저장해야함.
+                SharedPreferences pref;
+                SharedPreferences.Editor editor;
+
+                Log.d("15","15");
+
+                pref = getSharedPreferences("character", Activity.MODE_PRIVATE);
+                editor = pref.edit();
+
+                editor.putInt("hat", hat);
+                editor.putInt("clothes", clothes);
+                editor.putInt("emoji", emoji);
+                editor.apply();
+
+
+
+
             }
         });
 
@@ -84,7 +180,7 @@ public class Character extends AppCompatActivity {
         //서버에서 경험치 받아와서 경험치 바 표시
         //식이 잘못됨. 100을채워야 레벨업이 된다면 90일떄 0.49를하면 44가 나옴.
         //int exp_per=per/5; 해서 5보다 크거나 같고 100보다 작을 때 조건줘도 되긴함.
-        int exp_per = (int) (per * 0.49);
+        int exp_per = per;
         if(exp_per > 49 && exp_per<100) {
             exp_bar.setImageResource(R.drawable.half_exp);
         }else
@@ -96,12 +192,16 @@ public class Character extends AppCompatActivity {
         emoji5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(emoji != 5){
                     user_character.setImageResource(R.drawable.emoji5);
                     i=false;
+
+                    emoji = 5;
                 }else{
                     user_character.setImageResource(R.drawable.character_basic);
                     i=true;
+
+                    emoji = 0;
                 }
             }
         });
@@ -177,12 +277,23 @@ public class Character extends AppCompatActivity {
         clothes5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(clothes != 5){
                     user_clothes.setImageResource(R.drawable.clothes5);
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
+
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,15);
+                    mLay.rightMargin = ConvertDPtoPX(context,67);
+                    mLay.width = ConvertDPtoPX(context,260);
+
+                    user_clothes.setLayoutParams(mLay);
                     i=false;
+
+                    clothes = 5;
                 }else{
                     user_clothes.setImageResource(R.drawable.empty_img);
                     i=true;
+                    clothes = 0;
                 }
             }
         });
@@ -190,12 +301,22 @@ public class Character extends AppCompatActivity {
         clothes10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(clothes != 10){
                     user_clothes.setImageResource(R.drawable.clothes10);
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,32);
+                    mLay.rightMargin = ConvertDPtoPX(context,67);
+                    mLay.width = ConvertDPtoPX(context,260);
+
+                    user_clothes.setLayoutParams(mLay);
                     i=false;
+                    clothes = 10;
                 }else{
                     user_clothes.setImageResource(R.drawable.empty_img);
                     i=true;
+
+                    clothes = 0;
                 }
             }
         });
@@ -203,12 +324,24 @@ public class Character extends AppCompatActivity {
         clothes15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(clothes != 15){
                     user_clothes.setImageResource(R.drawable.clothes15);
+
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,10);
+                    mLay.rightMargin = ConvertDPtoPX(context,62);
+                    mLay.width = ConvertDPtoPX(context,270);
+
+                    user_clothes.setLayoutParams(mLay);
+
                     i=false;
+                    clothes = 15;
                 }else{
                     user_clothes.setImageResource(R.drawable.empty_img);
                     i=true;
+
+                    clothes = 0;
                 }
             }
         });
@@ -331,6 +464,11 @@ public class Character extends AppCompatActivity {
             }
         });
 
+    }
+
+    public static int ConvertDPtoPX(Context context, int dp) {
+        float density = context.getResources().getDisplayMetrics().density;
+        return Math.round((float) dp * density);
     }
 
 
