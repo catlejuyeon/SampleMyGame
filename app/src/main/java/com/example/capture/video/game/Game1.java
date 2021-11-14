@@ -52,14 +52,6 @@ public class Game1 extends AppCompatActivity {
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
 
-        Button Button_add = findViewById(R.id.Button_add);
-        Button_add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),SubActivity_add.class);
-                startActivity(intent);
-            }
-        });
 
     }
 
@@ -124,8 +116,8 @@ public class Game1 extends AppCompatActivity {
             builder.setMessage("두 개의 카드를 뒤집어 같은 그림이 나오도록 하세요");
             builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                 @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    finish();
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
                 }
             });
         builder.show();
