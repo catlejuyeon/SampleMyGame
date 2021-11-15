@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +19,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class Character extends AppCompatActivity {
     boolean i=true;
-    int check = 0;
     int hat = 0;
     int emoji = 0;
     int clothes = 0;
@@ -77,19 +77,147 @@ public class Character extends AppCompatActivity {
         ConstraintLayout.LayoutParams mLay= null;
         Context context = getApplicationContext();
 
+        switch (emoji){
+            case 0:
+                user_character.setImageResource(R.drawable.character_basic);
+                mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+
+                mLay.topMargin = ConvertDPtoPX(context,100);
+                mLay.rightMargin = ConvertDPtoPX(context,81);
+                mLay.width = ConvertDPtoPX(context,260);
+                mLay.height = ConvertDPtoPX(context,260);
+                break;
+            case 5:
+                Log.d("5","5");
+                user_character.setImageResource(R.drawable.emoji5);
+                mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+
+
+                mLay.topMargin = ConvertDPtoPX(context,109);
+                mLay.rightMargin = ConvertDPtoPX(context,80);
+                mLay.width = ConvertDPtoPX(context,252);
+                mLay.height = ConvertDPtoPX(context,252);
+
+                user_character.setLayoutParams(mLay);
+                i=false;
+
+                emoji = 5;
+                break;
+            case 10:
+                Log.d("10","10");
+                user_character.setImageResource(R.drawable.emoji10);
+                mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+
+
+                mLay.topMargin = ConvertDPtoPX(context,109);
+                mLay.rightMargin = ConvertDPtoPX(context,80);
+                mLay.width = ConvertDPtoPX(context,252);
+                mLay.height = ConvertDPtoPX(context,252);
+
+                user_character.setLayoutParams(mLay);
+                i=false;
+
+                emoji = 10;
+                break;
+            case 15:
+                Log.d("15","15");
+                user_character.setImageResource(R.drawable.emoji15);
+                mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+
+
+                mLay.topMargin = ConvertDPtoPX(context,109);
+                mLay.rightMargin = ConvertDPtoPX(context,80);
+                mLay.width = ConvertDPtoPX(context,252);
+                mLay.height = ConvertDPtoPX(context,252);
+
+                user_character.setLayoutParams(mLay);
+                i=false;
+
+                emoji = 15;
+                break;
+            case 20:
+                Log.d("20","20");
+                user_character.setImageResource(R.drawable.emoji20);
+                mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+
+
+                mLay.topMargin = ConvertDPtoPX(context,109);
+                mLay.rightMargin = ConvertDPtoPX(context,80);
+                mLay.width = ConvertDPtoPX(context,252);
+                mLay.height = ConvertDPtoPX(context,252);
+
+                user_character.setLayoutParams(mLay);
+                i=false;
+
+                emoji = 20;
+                break;
+            case 25:
+                Log.d("25","25");
+                user_character.setImageResource(R.drawable.emoji25);
+                mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+
+
+                mLay.topMargin = ConvertDPtoPX(context,109);
+                mLay.rightMargin = ConvertDPtoPX(context,80);
+                mLay.width = ConvertDPtoPX(context,252);
+                mLay.height = ConvertDPtoPX(context,252);
+
+                user_character.setLayoutParams(mLay);
+                i=false;
+
+                emoji = 25;
+                break;
+            case 30:
+                Log.d("30","30");
+                user_character.setImageResource(R.drawable.emoji30);
+                mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+
+
+                mLay.topMargin = ConvertDPtoPX(context,109);
+                mLay.rightMargin = ConvertDPtoPX(context,80);
+                mLay.width = ConvertDPtoPX(context,252);
+                mLay.height = ConvertDPtoPX(context,252);
+
+                user_character.setLayoutParams(mLay);
+                i=false;
+
+                emoji = 30;
+                break;
+
+            case 100:
+                Log.d("100","100");
+                user_character.setImageResource(R.drawable.character_basic);
+                mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+
+                mLay.topMargin = ConvertDPtoPX(context,100);
+                mLay.rightMargin = ConvertDPtoPX(context,81);
+                mLay.width = ConvertDPtoPX(context,260);
+                mLay.height = ConvertDPtoPX(context,260);
+
+
+                user_character.setLayoutParams(mLay);
+                i=false;
+
+                emoji = 100;
+                break;
+
+        }
+
         switch (clothes){
             case 0:
                 user_clothes.setImageResource(R.drawable.empty_img);
+                clothes=0;
+                i=false;
                 break;
             case 5:
-                Log.d("15","5");
+                Log.d("5","5");
                 user_clothes.setImageResource(R.drawable.clothes5);
                 mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
 
-
-                mLay.topMargin = ConvertDPtoPX(context,15);
-                mLay.rightMargin = ConvertDPtoPX(context,67);
-                mLay.width = ConvertDPtoPX(context,260);
+                mLay.topMargin = ConvertDPtoPX(context,42);
+                mLay.rightMargin = ConvertDPtoPX(context,70);
+                mLay.width = ConvertDPtoPX(context,270);
+                mLay.height = ConvertDPtoPX(context,330);
 
                 user_clothes.setLayoutParams(mLay);
                 i=false;
@@ -97,13 +225,14 @@ public class Character extends AppCompatActivity {
                 clothes = 5;
                 break;
             case 10:
-                Log.d("15","10");
+                Log.d("10","10");
                 user_clothes.setImageResource(R.drawable.clothes10);
                 mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
 
-                mLay.topMargin = ConvertDPtoPX(context,32);
-                mLay.rightMargin = ConvertDPtoPX(context,67);
-                mLay.width = ConvertDPtoPX(context,260);
+                mLay.topMargin = ConvertDPtoPX(context,66);
+                mLay.rightMargin = ConvertDPtoPX(context,70);
+                mLay.width = ConvertDPtoPX(context,270);
+                mLay.height = ConvertDPtoPX(context,330);
 
                 user_clothes.setLayoutParams(mLay);
                 i=false;
@@ -115,20 +244,169 @@ public class Character extends AppCompatActivity {
 
                 mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
 
-                mLay.topMargin = ConvertDPtoPX(context,10);
-                mLay.rightMargin = ConvertDPtoPX(context,62);
+                mLay.topMargin = ConvertDPtoPX(context,25);
+                mLay.rightMargin = ConvertDPtoPX(context,67);
                 mLay.width = ConvertDPtoPX(context,270);
+                mLay.height = ConvertDPtoPX(context,330);
 
                 user_clothes.setLayoutParams(mLay);
 
                 i=false;
                 clothes = 15;
                 break;
+            case 20:
+                Log.d("20","20");
+                user_clothes.setImageResource(R.drawable.clothes20);
+
+                mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
+
+                mLay.topMargin = ConvertDPtoPX(context,25);
+                mLay.rightMargin = ConvertDPtoPX(context,45);
+                mLay.width = ConvertDPtoPX(context,270);
+                mLay.height = ConvertDPtoPX(context,310);
+
+                user_clothes.setLayoutParams(mLay);
+
+                i=false;
+                clothes = 20;
+                break;
             case 25:
+                Log.d("25","25");
+                user_clothes.setImageResource(R.drawable.clothes25);
+
+                mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
+
+                mLay.topMargin = ConvertDPtoPX(context,45);
+                mLay.rightMargin = ConvertDPtoPX(context,65);
+                mLay.width = ConvertDPtoPX(context,270);
+                mLay.height = ConvertDPtoPX(context,290);
+
+                user_clothes.setLayoutParams(mLay);
+
+                i=false;
+                clothes = 25;
+                break;
             case 30:
+                Log.d("30","30");
+                user_clothes.setImageResource(R.drawable.clothes30);
+
+                mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
+
+                mLay.topMargin = ConvertDPtoPX(context,53);
+                mLay.rightMargin = ConvertDPtoPX(context,72);
+                mLay.width = ConvertDPtoPX(context,270);
+                mLay.height = ConvertDPtoPX(context,300);
+
+                user_clothes.setLayoutParams(mLay);
+
+                i=false;
+                clothes =0;
+                break;
         }
 
+        switch (hat){
+            case 0:
+                user_hat.setImageResource(R.drawable.empty_img);
+                break;
+            case 5:
+                Log.d("5","5");
+                user_hat.setImageResource(R.drawable.hat5);
 
+                mLay = (ConstraintLayout.LayoutParams) user_hat.getLayoutParams();
+
+                mLay.topMargin = ConvertDPtoPX(context,15);
+                mLay.rightMargin = ConvertDPtoPX(context,27);
+                mLay.width = ConvertDPtoPX(context,280);
+                mLay.height = ConvertDPtoPX(context,280);
+
+                user_hat.setLayoutParams(mLay);
+
+                i=false;
+                hat = 5;
+                break;
+            case 10:
+                Log.d("10","10");
+                user_hat.setImageResource(R.drawable.hat10);
+
+                mLay = (ConstraintLayout.LayoutParams) user_hat.getLayoutParams();
+
+                mLay.topMargin = ConvertDPtoPX(context,6);
+                mLay.rightMargin = ConvertDPtoPX(context,65);
+                mLay.width = ConvertDPtoPX(context,280);
+                mLay.height = ConvertDPtoPX(context,270);
+
+                user_hat.setLayoutParams(mLay);
+
+                i=false;
+                hat = 10;
+                break;
+            case 15:
+                Log.d("15","15");
+                user_hat.setImageResource(R.drawable.hat15);
+
+                mLay = (ConstraintLayout.LayoutParams) user_hat.getLayoutParams();
+
+                mLay.topMargin = ConvertDPtoPX(context,6);
+                mLay.rightMargin = ConvertDPtoPX(context,65);
+                mLay.width = ConvertDPtoPX(context,280);
+                mLay.height = ConvertDPtoPX(context,270);
+
+                user_hat.setLayoutParams(mLay);
+
+                i=false;
+                hat = 15;
+                break;
+            case 20:
+                Log.d("20","20");
+                user_hat.setImageResource(R.drawable.hat20);
+
+                mLay = (ConstraintLayout.LayoutParams) user_hat.getLayoutParams();
+
+                mLay.topMargin = ConvertDPtoPX(context,17);
+                mLay.rightMargin = ConvertDPtoPX(context,70);
+                mLay.width = ConvertDPtoPX(context,290);
+                mLay.height = ConvertDPtoPX(context,270);
+
+                user_hat.setLayoutParams(mLay);
+
+                i=false;
+                hat = 20;
+                break;
+            case 25:
+                Log.d("25","25");
+                user_hat.setImageResource(R.drawable.hat25);
+
+                mLay = (ConstraintLayout.LayoutParams) user_hat.getLayoutParams();
+
+                mLay.topMargin = ConvertDPtoPX(context,23);
+                mLay.rightMargin = ConvertDPtoPX(context,62);
+                mLay.width = ConvertDPtoPX(context,290);
+                mLay.height = ConvertDPtoPX(context,270);
+
+                user_hat.setLayoutParams(mLay);
+
+                i=false;
+                hat = 25;
+                break;
+            case 30:
+                Log.d("30","30");
+                user_hat.setImageResource(R.drawable.hat30);
+
+                mLay = (ConstraintLayout.LayoutParams) user_hat.getLayoutParams();
+
+                mLay.topMargin = ConvertDPtoPX(context,0);
+                mLay.rightMargin = ConvertDPtoPX(context,30);
+                mLay.width = ConvertDPtoPX(context,350);
+                mLay.height = ConvertDPtoPX(context,320);
+
+                user_hat.setLayoutParams(mLay);
+
+                i=false;
+                hat = 30;
+                break;
+        }
+
+        //게임하러 가기 버튼
         Button go_game=findViewById(R.id.go_game);
         go_game.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,23 +416,37 @@ public class Character extends AppCompatActivity {
             }
         });
 
+        //되돌리기 버튼
         Button reset=findViewById(R.id.reset);
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 user_character.setImageResource(R.drawable.character_basic);
+                user_clothes.setImageResource(R.drawable.empty_img);
+                user_hat.setImageResource(R.drawable.empty_img);
+
+                ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+                Context context = getApplicationContext();
+                mLay.topMargin = ConvertDPtoPX(context,100);
+                mLay.rightMargin = ConvertDPtoPX(context,81);
+                mLay.width = ConvertDPtoPX(context,260);
+                mLay.height = ConvertDPtoPX(context,260);
+
+                clothes=100;
+                hat=100;
+                emoji=100;
             }
         });
 
+        //저장하기 버튼
         Button save=findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //캐릭터를 꾸미고 꾸민 이미지를 메인 화면에다 넣는건가? 아니면 그냥 꾸미기창에 보이기? 쨌든 최종으로 꾸민 걸 저장해야함.
                 SharedPreferences pref;
                 SharedPreferences.Editor editor;
 
-                Log.d("15","15");
+                Log.d("","");
 
                 pref = getSharedPreferences("character", Activity.MODE_PRIVATE);
                 editor = pref.edit();
@@ -164,22 +456,18 @@ public class Character extends AppCompatActivity {
                 editor.putInt("emoji", emoji);
                 editor.apply();
 
-
-
-
+                Toast.makeText(getApplicationContext(), "저장 되었습니다. ",Toast.LENGTH_LONG).show();
             }
         });
 
 
-
-        //level==5했을 때 level이 빨간밑줄(int가 아니여서그런듯)
+        //level에 따라 잠금이 풀리는 아이템
+        //근데 이게 보여지는것만 그렇게 보이는거라서 30레벨이 아니여도 30레벨 선택이 가능함 (조건걸어줘야함)
         if(level1==5||level1==10||level1==15||level1==20||level1==25||level1==30) {
             userItem(level1);
         }
 
         //서버에서 경험치 받아와서 경험치 바 표시
-        //식이 잘못됨. 100을채워야 레벨업이 된다면 90일떄 0.49를하면 44가 나옴.
-        //int exp_per=per/5; 해서 5보다 크거나 같고 100보다 작을 때 조건줘도 되긴함.
         int exp_per = per;
         if(exp_per > 49 && exp_per<100) {
             exp_bar.setImageResource(R.drawable.half_exp);
@@ -194,12 +482,24 @@ public class Character extends AppCompatActivity {
             public void onClick(View v) {
                 if(emoji != 5){
                     user_character.setImageResource(R.drawable.emoji5);
-                    i=false;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,109);
+                    mLay.rightMargin = ConvertDPtoPX(context,80);
+                    mLay.width = ConvertDPtoPX(context,252);
+                    mLay.height = ConvertDPtoPX(context,252);
 
-                    emoji = 5;
+                    user_character.setLayoutParams(mLay);
+
+                    emoji= 5;
                 }else{
                     user_character.setImageResource(R.drawable.character_basic);
-                    i=true;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,100);
+                    mLay.rightMargin = ConvertDPtoPX(context,81);
+                    mLay.width = ConvertDPtoPX(context,260);
+                    mLay.height = ConvertDPtoPX(context,260);
 
                     emoji = 0;
                 }
@@ -209,12 +509,28 @@ public class Character extends AppCompatActivity {
         emoji10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(emoji != 10){
                     user_character.setImageResource(R.drawable.emoji10);
-                    i=false;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,109);
+                    mLay.rightMargin = ConvertDPtoPX(context,80);
+                    mLay.width = ConvertDPtoPX(context,252);
+                    mLay.height = ConvertDPtoPX(context,252);
+
+                    user_character.setLayoutParams(mLay);
+
+                    emoji= 10;
                 }else{
                     user_character.setImageResource(R.drawable.character_basic);
-                    i=true;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,100);
+                    mLay.rightMargin = ConvertDPtoPX(context,81);
+                    mLay.width = ConvertDPtoPX(context,260);
+                    mLay.height = ConvertDPtoPX(context,260);
+
+                    emoji = 0;
                 }
             }
         });
@@ -222,12 +538,28 @@ public class Character extends AppCompatActivity {
         emoji15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(emoji != 15){
                     user_character.setImageResource(R.drawable.emoji15);
-                    i=false;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,109);
+                    mLay.rightMargin = ConvertDPtoPX(context,80);
+                    mLay.width = ConvertDPtoPX(context,252);
+                    mLay.height = ConvertDPtoPX(context,252);
+
+                    user_character.setLayoutParams(mLay);
+
+                    emoji= 15;
                 }else{
                     user_character.setImageResource(R.drawable.character_basic);
-                    i=true;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,100);
+                    mLay.rightMargin = ConvertDPtoPX(context,81);
+                    mLay.width = ConvertDPtoPX(context,260);
+                    mLay.height = ConvertDPtoPX(context,260);
+
+                    emoji = 0;
                 }
             }
         });
@@ -235,12 +567,28 @@ public class Character extends AppCompatActivity {
         emoji20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(emoji != 20){
                     user_character.setImageResource(R.drawable.emoji20);
-                    i=false;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,109);
+                    mLay.rightMargin = ConvertDPtoPX(context,80);
+                    mLay.width = ConvertDPtoPX(context,252);
+                    mLay.height = ConvertDPtoPX(context,252);
+
+                    user_character.setLayoutParams(mLay);
+
+                    emoji= 20;
                 }else{
                     user_character.setImageResource(R.drawable.character_basic);
-                    i=true;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,100);
+                    mLay.rightMargin = ConvertDPtoPX(context,81);
+                    mLay.width = ConvertDPtoPX(context,260);
+                    mLay.height = ConvertDPtoPX(context,260);
+
+                    emoji = 0;
                 }
             }
         });
@@ -248,12 +596,28 @@ public class Character extends AppCompatActivity {
         emoji25.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(emoji != 25){
                     user_character.setImageResource(R.drawable.emoji25);
-                    i=false;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,109);
+                    mLay.rightMargin = ConvertDPtoPX(context,80);
+                    mLay.width = ConvertDPtoPX(context,252);
+                    mLay.height = ConvertDPtoPX(context,252);
+
+                    user_character.setLayoutParams(mLay);
+
+                    emoji= 25;
                 }else{
                     user_character.setImageResource(R.drawable.character_basic);
-                    i=true;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,100);
+                    mLay.rightMargin = ConvertDPtoPX(context,81);
+                    mLay.width = ConvertDPtoPX(context,260);
+                    mLay.height = ConvertDPtoPX(context,260);
+
+                    emoji = 0;
                 }
             }
         });
@@ -261,12 +625,28 @@ public class Character extends AppCompatActivity {
         emoji30.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(emoji != 30){
                     user_character.setImageResource(R.drawable.emoji30);
-                    i=false;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,109);
+                    mLay.rightMargin = ConvertDPtoPX(context,80);
+                    mLay.width = ConvertDPtoPX(context,252);
+                    mLay.height = ConvertDPtoPX(context,252);
+
+                    user_character.setLayoutParams(mLay);
+
+                    emoji= 30;
                 }else{
                     user_character.setImageResource(R.drawable.character_basic);
-                    i=true;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_character.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,100);
+                    mLay.rightMargin = ConvertDPtoPX(context,81);
+                    mLay.width = ConvertDPtoPX(context,260);
+                    mLay.height = ConvertDPtoPX(context,260);
+
+                    emoji = 0;
                 }
             }
         });
@@ -282,17 +662,16 @@ public class Character extends AppCompatActivity {
                     ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
 
                     Context context = getApplicationContext();
-                    mLay.topMargin = ConvertDPtoPX(context,15);
-                    mLay.rightMargin = ConvertDPtoPX(context,67);
-                    mLay.width = ConvertDPtoPX(context,260);
+                    mLay.topMargin = ConvertDPtoPX(context,42);
+                    mLay.rightMargin = ConvertDPtoPX(context,70);
+                    mLay.width = ConvertDPtoPX(context,270);
+                    mLay.height=ConvertDPtoPX(context,330);
 
                     user_clothes.setLayoutParams(mLay);
-                    i=false;
 
                     clothes = 5;
                 }else{
                     user_clothes.setImageResource(R.drawable.empty_img);
-                    i=true;
                     clothes = 0;
                 }
             }
@@ -305,16 +684,16 @@ public class Character extends AppCompatActivity {
                     user_clothes.setImageResource(R.drawable.clothes10);
                     ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
                     Context context = getApplicationContext();
-                    mLay.topMargin = ConvertDPtoPX(context,32);
-                    mLay.rightMargin = ConvertDPtoPX(context,67);
-                    mLay.width = ConvertDPtoPX(context,260);
+                    mLay.topMargin = ConvertDPtoPX(context,66);
+                    mLay.rightMargin = ConvertDPtoPX(context,70);
+                    mLay.width = ConvertDPtoPX(context,270);
+                    mLay.height = ConvertDPtoPX(context,330);
 
                     user_clothes.setLayoutParams(mLay);
-                    i=false;
+
                     clothes = 10;
                 }else{
                     user_clothes.setImageResource(R.drawable.empty_img);
-                    i=true;
 
                     clothes = 0;
                 }
@@ -329,17 +708,16 @@ public class Character extends AppCompatActivity {
 
                     ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
                     Context context = getApplicationContext();
-                    mLay.topMargin = ConvertDPtoPX(context,10);
-                    mLay.rightMargin = ConvertDPtoPX(context,62);
+                    mLay.topMargin = ConvertDPtoPX(context,25);
+                    mLay.rightMargin = ConvertDPtoPX(context,67);
                     mLay.width = ConvertDPtoPX(context,270);
+                    mLay.height = ConvertDPtoPX(context,330);
 
                     user_clothes.setLayoutParams(mLay);
 
-                    i=false;
                     clothes = 15;
                 }else{
                     user_clothes.setImageResource(R.drawable.empty_img);
-                    i=true;
 
                     clothes = 0;
                 }
@@ -349,12 +727,22 @@ public class Character extends AppCompatActivity {
         clothes20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(clothes != 20){
                     user_clothes.setImageResource(R.drawable.clothes20);
-                    i=false;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,25);
+                    mLay.rightMargin = ConvertDPtoPX(context,45);
+                    mLay.width = ConvertDPtoPX(context,270);
+                    mLay.height= ConvertDPtoPX(context,310);
+
+                    user_clothes.setLayoutParams(mLay);
+
+                    clothes = 20;
                 }else{
                     user_clothes.setImageResource(R.drawable.empty_img);
-                    i=true;
+
+                    clothes=0;
                 }
             }
         });
@@ -362,12 +750,22 @@ public class Character extends AppCompatActivity {
         clothes25.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(clothes!=25){
                     user_clothes.setImageResource(R.drawable.clothes25);
-                    i=false;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,45);
+                    mLay.rightMargin = ConvertDPtoPX(context,65);
+                    mLay.width = ConvertDPtoPX(context,270);
+                    mLay.height= ConvertDPtoPX(context,290);
+
+                    user_clothes.setLayoutParams(mLay);
+
+                    clothes = 25;
                 }else{
                     user_clothes.setImageResource(R.drawable.empty_img);
-                    i=true;
+
+                    clothes=0;
                 }
             }
         });
@@ -375,12 +773,21 @@ public class Character extends AppCompatActivity {
         clothes30.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(clothes!=30){
                     user_clothes.setImageResource(R.drawable.clothes30);
-                    i=false;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_clothes.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,53);
+                    mLay.rightMargin = ConvertDPtoPX(context,72);
+                    mLay.width = ConvertDPtoPX(context,270);
+                    mLay.height= ConvertDPtoPX(context,300);
+
+                    user_clothes.setLayoutParams(mLay);
+
+                    clothes = 30;
                 }else{
                     user_clothes.setImageResource(R.drawable.empty_img);
-                    i=true;
+                    clothes=0;
                 }
             }
         });
@@ -389,12 +796,21 @@ public class Character extends AppCompatActivity {
         hat5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(hat!=5){
                     user_hat.setImageResource(R.drawable.hat5);
-                    i=false;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_hat.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,15);
+                    mLay.rightMargin = ConvertDPtoPX(context,27);
+                    mLay.width = ConvertDPtoPX(context,280);
+                    mLay.height= ConvertDPtoPX(context,280);
+
+                    user_hat.setLayoutParams(mLay);
+
+                    hat = 5;
                 }else{
                     user_hat.setImageResource(R.drawable.empty_img);
-                    i=true;
+                    hat=0;
                 }
             }
         });
@@ -402,12 +818,21 @@ public class Character extends AppCompatActivity {
         hat10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(hat!=10){
                     user_hat.setImageResource(R.drawable.hat10);
-                    i=false;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_hat.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,6);
+                    mLay.rightMargin = ConvertDPtoPX(context,65);
+                    mLay.width = ConvertDPtoPX(context,280);
+                    mLay.height= ConvertDPtoPX(context,270);
+
+                    user_hat.setLayoutParams(mLay);
+
+                    hat = 10;
                 }else{
                     user_hat.setImageResource(R.drawable.empty_img);
-                    i=true;
+                    hat =0;
                 }
             }
         });
@@ -415,12 +840,21 @@ public class Character extends AppCompatActivity {
         hat15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(hat!=15){
                     user_hat.setImageResource(R.drawable.hat15);
-                    i=false;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_hat.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,6);
+                    mLay.rightMargin = ConvertDPtoPX(context,65);
+                    mLay.width = ConvertDPtoPX(context,280);
+                    mLay.height= ConvertDPtoPX(context,270);
+
+                    user_hat.setLayoutParams(mLay);
+
+                    hat = 15;
                 }else{
                     user_hat.setImageResource(R.drawable.empty_img);
-                    i=true;
+                    hat=0;
                 }
             }
         });
@@ -428,9 +862,18 @@ public class Character extends AppCompatActivity {
         hat20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(hat!=20){
                     user_hat.setImageResource(R.drawable.hat20);
-                    i=false;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_hat.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,17);
+                    mLay.rightMargin = ConvertDPtoPX(context,70);
+                    mLay.width = ConvertDPtoPX(context,290);
+                    mLay.height= ConvertDPtoPX(context,270);
+
+                    user_hat.setLayoutParams(mLay);
+
+                    hat = 10;
                 }else{
                     user_hat.setImageResource(R.drawable.empty_img);
                     i=true;
@@ -441,12 +884,21 @@ public class Character extends AppCompatActivity {
         hat25.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(hat!=25){
                     user_hat.setImageResource(R.drawable.hat25);
-                    i=false;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_hat.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,23);
+                    mLay.rightMargin = ConvertDPtoPX(context,62);
+                    mLay.width = ConvertDPtoPX(context,290);
+                    mLay.height= ConvertDPtoPX(context,270);
+
+                    user_hat.setLayoutParams(mLay);
+
+                    hat = 25;
                 }else{
                     user_hat.setImageResource(R.drawable.empty_img);
-                    i=true;
+                    hat=0;
                 }
             }
         });
@@ -454,12 +906,21 @@ public class Character extends AppCompatActivity {
         hat30.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==true){
+                if(hat!=30){
                     user_hat.setImageResource(R.drawable.hat30);
-                    i=false;
+                    ConstraintLayout.LayoutParams mLay = (ConstraintLayout.LayoutParams) user_hat.getLayoutParams();
+                    Context context = getApplicationContext();
+                    mLay.topMargin = ConvertDPtoPX(context,0);
+                    mLay.rightMargin = ConvertDPtoPX(context,30);
+                    mLay.width = ConvertDPtoPX(context,350);
+                    mLay.height= ConvertDPtoPX(context,320);
+
+                    user_hat.setLayoutParams(mLay);
+
+                    hat = 30;
                 }else{
                     user_hat.setImageResource(R.drawable.empty_img);
-                    i=true;
+                    hat=0;
                 }
             }
         });
